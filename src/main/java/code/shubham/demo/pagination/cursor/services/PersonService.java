@@ -36,7 +36,7 @@ public class PersonService {
 
         Instant createdAtCursor = Instant.ofEpochSecond(Long.parseLong(cursorParts[0]), Long.parseLong(cursorParts[1]));
         Timestamp createdAt = Timestamp.from(createdAtCursor);
-        Long idCursor = Long.parseLong(cursorParts[1]);
+        Long idCursor = Long.parseLong(cursorParts[2]);
 
         if (isPrevious) {
             pageable = PageRequest.of(0, pageSize, Sort.by("createdAt").descending().and(Sort.by("id").descending()));
